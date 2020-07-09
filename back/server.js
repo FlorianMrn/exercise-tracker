@@ -4,7 +4,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const exercisesRouter = require('../back/routes/exercises');
-const usersRouter = require('../back/routes/exercises');
+const usersRouter = require('../back/routes/users');
 
 // Server
 const app = express();
