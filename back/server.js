@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const exercisesRouter = require('../back/routes/exercises');
+const usersRouter = require('../back/routes/exercises');
 
 // Server
 const app = express();
@@ -22,6 +24,9 @@ const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('MongoDB database successfully connected');
 });
+
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`);
